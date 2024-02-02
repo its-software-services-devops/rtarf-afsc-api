@@ -95,7 +95,7 @@ jobs:
           TAGS="$TAGS,${DOCKER_IMAGE}:sha-${GITHUB_SHA::8}"
         fi
 
-        DOCKERFILE=Dockerfile
+        DOCKERFILE=eform-api/Dockerfile
 
         echo ::set-output name=tags::${TAGS}
         echo ::set-output name=gcr_tags::${GCR_TAGS}
@@ -125,7 +125,7 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
-    - name: GCR Authen
+    - name: GAR Authen
       run: |
         # Set up docker to authenticate
         # via gcloud command-line tool.
